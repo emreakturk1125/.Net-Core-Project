@@ -10,3 +10,6 @@ CONSOLE APP
 Entity Framework Code First
 #
 WebAPI
+#
+Education :  Engin Demiroğ Yazılım Geliştirici Yetiştirme Kampı
+
