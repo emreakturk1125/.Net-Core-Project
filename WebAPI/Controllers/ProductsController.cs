@@ -15,9 +15,6 @@ namespace WebAPI.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        //Loosely coupled
-        //naming convention
-        //IoC Container -- Inversion of Control
         IProductService _productService;
 
         public ProductsController(IProductService productService)
@@ -28,8 +25,6 @@ namespace WebAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            //Swagger
-            //Dependency chain --
             var result =  _productService.GetAll();
             if (result.Success)
             {
@@ -65,6 +60,3 @@ namespace WebAPI.Controllers
 
     }
 }
-
-
-//22.05 DERSTEYİZ
