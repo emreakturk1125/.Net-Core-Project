@@ -1,5 +1,12 @@
 # FinalProject
 LAYERED ARCHITECTURE
+#
 GENERİC REPOSITORY DESIGN PATTERN 
+#
 CONSOLE APP
+#
+.Net Core
+#
+Entity Framework Code First
+#
 WebAPI
