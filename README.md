@@ -1,15 +1,23 @@
-# 
-LAYERED ARCHITECTURE
+Education :  Engin Demiroğ Yazılım Geliştirici Yetiştirme Kampı
 #
-GENERİC REPOSITORY DESIGN PATTERN 
-#
-CONSOLE APP
 #
 .Net Core
 #
+Layered Architecture
+#
+Generic Repository Design Pattern
+# 
 Entity Framework Code First
 #
 WebAPI
 #
-Education :  Engin Demiroğ Yazılım Geliştirici Yetiştirme Kampı
+Ioc Container -> Autofac
+#
+Validation
+#
+Aspect Oriented Programming
+#
+Caching
+
+
 
