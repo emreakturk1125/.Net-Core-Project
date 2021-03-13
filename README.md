@@ -1,4 +1,4 @@
-#Education :  Engin Demiroğ Yazılım Geliştirici Yetiştirme Kampı
+# Education :  Engin Demiroğ Yazılım Geliştirici Yetiştirme Kampı
 #
 .Net Core
 #
