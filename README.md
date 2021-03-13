@@ -1,6 +1,8 @@
 ## Education :  Engin Demiroğ Yazılım Geliştirici Yetiştirme Kampı
 #
-**About Project** : It is an infrastructure that can be used in all kinds of projects.
+**About Project** 
+#
+It is an infrastructure that can be used in all kinds of projects.
 #
 .Net Core
 #
