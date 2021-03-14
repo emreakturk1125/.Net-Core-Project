@@ -3,6 +3,7 @@ using System;
 
 namespace Core.Utilities.Interceptors
 {
+    // bu Attribute kullanıldığı zaman bütün metodlar bunun içine girer
     public abstract class MethodInterception : MethodInterceptionBaseAttribute
     {
         //invocation :  business method

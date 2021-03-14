@@ -15,11 +15,12 @@ using System.Text;
 
 namespace Business.DependencyResolvers.Autofac
 {
+    //Manage Nuget Package'den : Autofac kurulması gerekir
     public class AutofacBusinessModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
-
+            //IProductService istenirse, ProductManager instance ver demektir.(startup.cs deki AddSingleton karşılığı autofac'de burasıdır)
             builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance();
             builder.RegisterType<EfProductDal>().As<IProductDal>().SingleInstance();
 
