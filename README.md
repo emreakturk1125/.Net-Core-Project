@@ -16,7 +16,7 @@ WebAPI
 #
 Ioc Container -> Autofac
 #
-Validation
+FluentValidation
 #
 Aspect Oriented Programming
 #
