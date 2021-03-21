@@ -7,7 +7,7 @@ namespace Core.Extensions
 {
     public static class ClaimExtensions
     {
-        public static void AddEmail(this ICollection<Claim> claims, string email)
+        public static void AddEmail(this ICollection<Claim> claims, string email) // this ICollection<Claim> demek, Claim'i extend ediyorum demektir. AddEmail metodu ekliyorum demek
         {
             claims.Add(new Claim(JwtRegisteredClaimNames.Email, email));
         }

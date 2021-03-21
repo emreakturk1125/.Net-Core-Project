@@ -26,6 +26,7 @@ namespace Business.Concrete
         IProductDal _productDal;
         ICategoryService _categoryService;
 
+        //**** Bir manager kendisi hariç başka dal'ı enjekte edemez.******//
         public ProductManager(IProductDal productDal,ICategoryService categoryService)
         {
             _productDal = productDal;
