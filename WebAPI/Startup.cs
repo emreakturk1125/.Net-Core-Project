@@ -1,4 +1,4 @@
-using Business.Abstract;
+﻿using Business.Abstract;
 using Business.Concrete;
 using Core.DependencyResolvers;
 using Core.Extensions;
@@ -34,17 +34,14 @@ namespace WebAPI
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
             //services.AddSingleton<IProductService,ProductManager>();
             //services.AddSingleton<IProductDal, EfProductDal>();
-
-            
-
+         
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
-
+            // Bu sistemde JWT kullanılacak dedik
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -66,7 +63,7 @@ namespace WebAPI
 
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // Asp.Net Yaşam döngüsünde hangi yapıların sırası ile çalışmasını sağlar
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

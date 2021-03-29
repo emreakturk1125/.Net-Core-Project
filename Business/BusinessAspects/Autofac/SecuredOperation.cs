@@ -15,7 +15,7 @@ namespace Business.BusinessAspects.Autofac
     public class SecuredOperation : MethodInterception
     {
         private string[] _roles;
-        private IHttpContextAccessor _httpContextAccessor;
+        private IHttpContextAccessor _httpContextAccessor; // JWT göndererek istek yapılıyor, binlerce kişide istek atabilir. her istek için HttpContext oluşur
 
         public SecuredOperation(string roles)
         {

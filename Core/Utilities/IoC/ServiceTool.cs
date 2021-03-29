@@ -5,7 +5,12 @@ using System.Text;
 
 namespace Core.Utilities.IoC
 {
-    public static class ServiceTool
+
+    //builder.RegisterType<CategoryManager>().As<ICategoryService>().SingleInstance();
+    // builder.RegisterType<EfCategoryDal>().As<ICategoryDal>().SingleInstance();
+    // Yukarıdaki örnekteki gibi;
+    // Autofac'de oluşturulan Injection'ları, oluşturabilmeyi sağlıyor. Interface servisteki karşılığını bu tool vasıtası ile alınabilir 
+    public static class ServiceTool   
     {
         public static IServiceProvider ServiceProvider { get; private set; }
 
