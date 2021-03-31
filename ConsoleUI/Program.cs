@@ -2,6 +2,8 @@
 using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ConsoleUI
 {
@@ -9,6 +11,10 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+            var animals = new List<string>() { "bird", "dog",""};
+            var methodName = "Deneme";
+            var key = $"{methodName}({string.Join(",", animals.Select(x => x?.ToString() ?? "<Null>"))})";
+
             //Data Transformation Object
             ProductTest();
             //IoC 

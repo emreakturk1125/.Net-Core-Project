@@ -11,7 +11,8 @@ namespace Core.CrossCuttingConcerns.Caching.Microsoft
 {
     public class MemoryCacheManager : ICacheManager
     {
-        //Adapter Pattern
+        //Bu class'da Adapter Pattern  kullanılıyor yani var olan sistem kendine göre adapte etmek
+        //.Net'in standart cache mekanizması kullanılıyor
         IMemoryCache _memoryCache;
 
         public MemoryCacheManager()
@@ -36,7 +37,7 @@ namespace Core.CrossCuttingConcerns.Caching.Microsoft
 
         public bool IsAdd(string key)
         {
-            return _memoryCache.TryGetValue(key, out _);
+            return _memoryCache.TryGetValue(key, out _); // out _ geri değer döndermesini istemiyorsan neğer 
         }
 
         public void Remove(string key)
@@ -44,7 +45,7 @@ namespace Core.CrossCuttingConcerns.Caching.Microsoft
             _memoryCache.Remove(key);
         }
 
-        public void RemoveByPattern(string pattern)
+        public void RemoveByPattern(string pattern) // Çalışma anında nesneleri bellekten silmeyi sağlar
         {
             var cacheEntriesCollectionDefinition = typeof(MemoryCache).GetProperty("EntriesCollection", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
             var cacheEntriesCollection = cacheEntriesCollectionDefinition.GetValue(_memoryCache) as dynamic;

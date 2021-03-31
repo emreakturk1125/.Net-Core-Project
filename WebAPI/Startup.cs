@@ -37,9 +37,7 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            //services.AddSingleton<IProductService,ProductManager>();
-            //services.AddSingleton<IProductDal, EfProductDal>();
-         
+            
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
             // Bu sistemde JWT kullanılacak dedik
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -57,7 +55,10 @@ namespace WebAPI
                     };
                 });
 
-            services.AddDependencyResolvers(new ICoreModule[] {
+            //services.AddSingleton<IProductService,ProductManager>();
+            //services.AddSingleton<IProductDal, EfProductDal>();
+
+            services.AddDependencyResolvers(new ICoreModule[] {   // üstteki gibi yapmak yerine core module üzerinde IoC Conatiner olayını yaptık
                new CoreModule()
             });
 

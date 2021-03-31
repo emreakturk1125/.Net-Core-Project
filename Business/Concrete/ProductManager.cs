@@ -4,6 +4,7 @@ using Business.CCS;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Caching;
+using Core.Aspects.Autofac.Transaction;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Caching;
 using Core.CrossCuttingConcerns.Validation;
@@ -35,7 +36,7 @@ namespace Business.Concrete
 
         [SecuredOperation("product.admin")]
         [ValidationAspect(typeof(ProductValidator))]
-        [CacheRemoveAspect("IProductService.Get")]
+        [CacheRemoveAspect("IProductService.Get")] // Cache key içinde "IProductService.Get" geçen leri bellekten sil demektir   
         public IResult Add(Product product)
         {
 
@@ -54,7 +55,7 @@ namespace Business.Concrete
         }
 
 
-        [CacheAspect] //key,value
+        [CacheAspect] //key,value  --  >  bu metoda istek atıldığında ilk CacheAspect' girer
         public IDataResult<List<Product>> GetAll()
         {
             if (DateTime.Now.Hour == 1)
@@ -135,7 +136,7 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-        //[TransactionScopeAspect]
+        [TransactionScopeAspect]
         public IResult AddTransactionalTest(Product product)
         {
 

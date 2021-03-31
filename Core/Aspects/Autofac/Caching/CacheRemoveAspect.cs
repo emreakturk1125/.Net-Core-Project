@@ -20,7 +20,7 @@ namespace Core.Aspects.Autofac.Caching
             _cacheManager = ServiceTool.ServiceProvider.GetService<ICacheManager>();
         }
 
-        protected override void OnSuccess(IInvocation invocation)
+        protected override void OnSuccess(IInvocation invocation) // Başarılı bir şekilde data manipulasyonu olduğu zamana çalış demektir
         {
             _cacheManager.RemoveByPattern(_pattern);
         }

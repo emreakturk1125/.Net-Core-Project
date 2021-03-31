@@ -14,7 +14,7 @@ namespace Core.DependencyResolvers
     {
         public void Load(IServiceCollection serviceCollection)
         {
-            serviceCollection.AddMemoryCache();
+            serviceCollection.AddMemoryCache(); // Arka planda hazır bir MemoryCache Instance oluşturuyor
             serviceCollection.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             serviceCollection.AddSingleton<ICacheManager, MemoryCacheManager>();
         }
