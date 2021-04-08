@@ -72,7 +72,7 @@ namespace Business.Concrete
         }
 
         [CacheAspect]
-        //[PerformanceAspect(5)]
+        //[PerformanceAspect(5)]  // 5 saniyeyi geçerse uyarı ver(mail atılabilir) gibi bir aspect ekleyebilirsin
         public IDataResult<Product> GetById(int productId)
         {
             return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == productId));

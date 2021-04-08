@@ -37,6 +37,8 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddCors();
             
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
             // Bu sistemde JWT kullanılacak dedik
@@ -71,6 +73,10 @@ namespace WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            // http://localhost:4200/ bu adresten get,post,put,delete hangi istek gelirse gelsin izin ver demektir.Birden fazla varsa virgülle ekleyebilirsin
+
+            app.UseCors(builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader()); 
 
             app.UseHttpsRedirection();
 
