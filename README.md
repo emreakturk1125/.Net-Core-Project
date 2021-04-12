@@ -6,7 +6,7 @@ It is an infrastructure that can be used in all kinds of projects.
 #
 .Net Core
 #
-Database : Microsoft SQL Server,  Database : Nortwind 
+Microsoft SQL Server,  Database : Nortwind 
 #
 Layered Architecture
 #
