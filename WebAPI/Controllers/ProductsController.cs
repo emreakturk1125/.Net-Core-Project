@@ -18,6 +18,8 @@ namespace WebAPI.Controllers
     {
         IProductService _productService;
 
+        // Yeni bir injection yaptığında, 
+        // Business.DependencyResolvers.Autofac a tanımlatman lazım IProductService istersen, karşılığında neyi vermesi gerektiğini
         public ProductsController(IProductService productService)
         {
             _productService = productService;
@@ -26,10 +28,10 @@ namespace WebAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {   
-            Thread.Sleep(2000);
             var result =  _productService.GetAll();
             if (result.Success)
             {
+                Thread.Sleep(1000);
                 return Ok(result);
             }
             return BadRequest(result);
@@ -40,6 +42,18 @@ namespace WebAPI.Controllers
         public IActionResult GetById(int id)
         {
             var result = _productService.GetById(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
+
+        [HttpGet("getbycategory")]
+        public IActionResult GetByCategory(int categoryId)
+        {
+            var result = _productService.GetAllByCategoryId(categoryId);
             if (result.Success)
             {
                 return Ok(result);

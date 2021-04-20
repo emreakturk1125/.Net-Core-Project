@@ -34,7 +34,7 @@ namespace Business.Concrete
             _categoryService = categoryService;
         }
 
-        [SecuredOperation("product.admin")]
+        //[SecuredOperation("product.admin")]
         [ValidationAspect(typeof(ProductValidator))]
         [CacheRemoveAspect("IProductService.Get")] // Cache key içinde "IProductService.Get" geçen leri bellekten sil demektir   
         public IResult Add(Product product)
@@ -150,5 +150,6 @@ namespace Business.Concrete
 
             return null;
         }
+ 
     }
 }

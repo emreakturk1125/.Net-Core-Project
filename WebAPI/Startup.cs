@@ -74,6 +74,8 @@ namespace WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.ConfigureCustomExceptionMiddleware(); // tüm sistem try catch içinde 
+
             // http://localhost:4200/ bu adresten get,post,put,delete hangi istek gelirse gelsin izin ver demektir.Birden fazla varsa virgülle ekleyebilirsin
 
             app.UseCors(builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader()); 
